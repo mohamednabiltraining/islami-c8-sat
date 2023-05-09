@@ -3,6 +3,7 @@ import 'package:islami_c8_sat/ui/home/hadeth/hadeth_tab.dart';
 import 'package:islami_c8_sat/ui/home/quran/quran_tab.dart';
 import 'package:islami_c8_sat/ui/home/radio/radio_tab.dart';
 import 'package:islami_c8_sat/ui/home/tasbeh/tasbeh_tab.dart';
+import 'package:islami_c8_sat/ui/my_theme.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = 'home';
@@ -17,10 +18,12 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
           image: DecorationImage(
               image: AssetImage(
-                'assets/images/main_background.png',
+                MyTheme.isDarkEnabled
+                    ? 'assets/images/dark_background_image.png'
+                    : 'assets/images/main_background.png',
               ),
               fit: BoxFit.fill)),
       child: Scaffold(
