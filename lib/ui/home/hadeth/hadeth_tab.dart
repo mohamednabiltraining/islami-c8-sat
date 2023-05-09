@@ -20,17 +20,17 @@ class _HadethTabState extends State<HadethTab> {
       children: [
         Image.asset('assets/images/hadeth_header_image.png'),
         Container(
-          color: Theme.of(context).primaryColor,
+          color: Theme.of(context).accentColor,
           width: double.infinity,
           height: 2,
           margin: EdgeInsets.only(bottom: 8),
         ),
-        const Text(
+        Text(
           'Hadeth Name',
-          style: TextStyle(fontSize: 28),
+          style: Theme.of(context).textTheme.headline5,
         ),
         Container(
-          color: Theme.of(context).primaryColor,
+          color: Theme.of(context).accentColor,
           width: double.infinity,
           height: 2,
           margin: EdgeInsets.only(top: 8),
@@ -42,7 +42,7 @@ class _HadethTabState extends State<HadethTab> {
                 },
                 separatorBuilder: (_, __) {
                   return Container(
-                    color: Theme.of(context).primaryColor,
+                    color: Theme.of(context).accentColor,
                     height: 1,
                     width: double.infinity,
                     margin: EdgeInsets.symmetric(horizontal: 48),

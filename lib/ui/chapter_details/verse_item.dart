@@ -12,9 +12,7 @@ class VerseItem extends StatelessWidget {
       child: Text(
         content,
         textAlign: TextAlign.center,
-        style: TextStyle(
-          fontSize: 20,
-        ),
+        style: Theme.of(context).textTheme.headline6,
       ),
     );
   }
