@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islami_c8_sat/ui/home/home.dart';
+import 'package:islami_c8_sat/ui/my_theme.dart';
 
 class SplashScreen extends StatelessWidget {
   static const String routeName = 'splash';
@@ -12,7 +13,9 @@ class SplashScreen extends StatelessWidget {
     return Scaffold(
       body: Container(
         child: Image.asset(
-          'assets/images/splash_background.png',
+          MyTheme.isDarkEnabled
+              ? 'assets/images/splash_dark_image.png'
+              : 'assets/images/splash_background.png',
           fit: BoxFit.fill,
           width: double.infinity,
           height: double.infinity,

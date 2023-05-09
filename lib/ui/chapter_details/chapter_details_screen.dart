@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islami_c8_sat/ui/chapter_details/verse_item.dart';
+import 'package:islami_c8_sat/ui/my_theme.dart';
 
 class ChapterDetailsScreen extends StatefulWidget {
   static const String routeName = 'sura-details';
@@ -18,10 +19,12 @@ class _ChapterDetailsScreenState extends State<ChapterDetailsScreen> {
         ModalRoute.of(context)?.settings.arguments as ChapterDetailsScreenArgs;
     if (verses.isEmpty) loadFile(args.index);
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
           image: DecorationImage(
               image: AssetImage(
-                'assets/images/main_background.png',
+                MyTheme.isDarkEnabled
+                    ? 'assets/images/dark_background_image.png'
+                    : 'assets/images/main_background.png',
               ),
               fit: BoxFit.fill)),
       child: Scaffold(
@@ -32,7 +35,6 @@ class _ChapterDetailsScreenState extends State<ChapterDetailsScreen> {
           children: [
             Expanded(
                 child: Card(
-              color: Colors.white,
               elevation: 24,
               margin: EdgeInsets.symmetric(vertical: 48, horizontal: 12),
               shape: RoundedRectangleBorder(
@@ -48,7 +50,7 @@ class _ChapterDetailsScreenState extends State<ChapterDetailsScreen> {
                         return Container(
                           height: 1,
                           width: double.infinity,
-                          color: Theme.of(context).primaryColor,
+                          color: Theme.of(context).accentColor,
                           margin: EdgeInsets.symmetric(horizontal: 48),
                         );
                       },
