@@ -5,5 +5,10 @@
   "tasbeh": "التسبيح",
   "radio": "الإذاعه",
   "chapter_name": "اسم السوره",
-  "hadeth_num": "رقم الحديث"
+  "hadeth_num": "رقم الحديث",
+  "settings": "الاعدادات",
+  "language": "اللغه",
+  "theme": "السمه",
+  "light": "فاتح",
+  "dark": "داكن"
 }

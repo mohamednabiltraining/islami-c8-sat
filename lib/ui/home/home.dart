@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islami_c8_sat/providers/settings_provider.dart';
 import 'package:islami_c8_sat/ui/home/hadeth/hadeth_tab.dart';
 import 'package:islami_c8_sat/ui/home/quran/quran_tab.dart';
 import 'package:islami_c8_sat/ui/home/radio/radio_tab.dart';
+import 'package:islami_c8_sat/ui/home/settings/settings_tab.dart';
 import 'package:islami_c8_sat/ui/home/tasbeh/tasbeh_tab.dart';
-import 'package:islami_c8_sat/ui/my_theme.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = 'home';
@@ -18,13 +20,12 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<SettingsProvider>(context);
     return Container(
       decoration: BoxDecoration(
           image: DecorationImage(
               image: AssetImage(
-                MyTheme.isDarkEnabled
-                    ? 'assets/images/dark_background_image.png'
-                    : 'assets/images/main_background.png',
+                provider.getMainBackGround(),
               ),
               fit: BoxFit.fill)),
       child: Scaffold(
@@ -53,6 +54,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 backgroundColor: Theme.of(context).primaryColor,
                 icon: const ImageIcon(AssetImage('assets/images/ic_radio.png')),
                 label: AppLocalizations.of(context)!.radio),
+            BottomNavigationBarItem(
+                backgroundColor: Theme.of(context).primaryColor,
+                icon: Icon(Icons.settings),
+                label: AppLocalizations.of(context)!.settings),
           ],
         ),
         appBar: AppBar(
@@ -63,5 +68,11 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  List<Widget> tabs = [QuranTab(), HadethTab(), TasbehTab(), RadioTab()];
+  List<Widget> tabs = [
+    QuranTab(),
+    HadethTab(),
+    TasbehTab(),
+    RadioTab(),
+    SettingsTab()
+  ];
 }

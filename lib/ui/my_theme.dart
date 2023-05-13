@@ -5,6 +5,12 @@ class MyTheme {
   static const Color lightPrimaryColor = Color(0xFFB7935F);
   static const Color darkPrimaryColor = Color(0xFF141A2E);
   static final ThemeData lightTheme = ThemeData(
+      bottomSheetTheme: const BottomSheetThemeData(
+          backgroundColor: Colors.white,
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(18),
+                  topRight: Radius.circular(18)))),
       cardColor: Colors.white,
       textTheme: const TextTheme(
         headline5: TextStyle(fontSize: 25, color: Colors.black),
@@ -31,6 +37,12 @@ class MyTheme {
           backgroundColor: Colors.transparent,
           elevation: 0));
   static final ThemeData darkTheme = ThemeData(
+      bottomSheetTheme: const BottomSheetThemeData(
+          backgroundColor: darkPrimaryColor,
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(18),
+                  topRight: Radius.circular(18)))),
       cardColor: darkPrimaryColor,
       textTheme: const TextTheme(
         headline5: TextStyle(fontSize: 25, color: Colors.white),
@@ -54,5 +66,4 @@ class MyTheme {
               color: Colors.white, fontSize: 32, fontWeight: FontWeight.w500),
           backgroundColor: Colors.transparent,
           elevation: 0));
-  static bool isDarkEnabled = true;
 }
